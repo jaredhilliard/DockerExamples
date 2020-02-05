@@ -1,4 +1,4 @@
-#The Point
+# The Point
 
 Note the size of the small hello world image vs. the fat hello world image using
 > docker image ls
