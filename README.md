@@ -1,5 +1,5 @@
 # DockerExamples
-A repository of simple docker images for teaching purposes.  Installation instructions are for Amazon Linux EC2, and are stolen directly from https://gist.github.com/npearce/6f3c7826c7499587f00957fee62f8ee9.  Note that as of this commit, yum works just fine, no need to involve the amazon-linux-extras package manager.
+A repository of simple docker images for teaching purposes.  Installation instructions are for Amazon Linux EC2, and are stolen directly from https://gist.github.com/npearce/6f3c7826c7499587f00957fee62f8ee9.  Everything else in this repository is based off of the "Docker for Developers" course on educative.io by Arnaud Weil.  Note that as of this commit, yum works just fine, no need to involve the amazon-linux-extras package manager.
 
 First we need install docker.  Run the following commands:
 1. sudo yum update
