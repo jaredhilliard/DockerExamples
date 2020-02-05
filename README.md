@@ -9,11 +9,12 @@ First we need install docker.  Run the following commands:
 5. sudo chkconfig docker on
 6. sudo reboot
 
+We ran the commands because:
 1. This is just generally a safe practice before any installation.
 2. Obvious.
 3. Start the docker service.
 4. Add ec2-user to the docker group to avoid any permission issues.
-5. Makes docker service start on start up.
+5. Makes docker service launch on start up.
 6. Reboot to verify it all runs fine on it's own. 
 
 You will also need git to use the docker auto-building feature.  So if it isn't already installed:
