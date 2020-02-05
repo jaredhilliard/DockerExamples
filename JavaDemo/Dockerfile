@@ -3,6 +3,7 @@ FROM openjdk:8-jdk-alpine AS builder
 WORKDIR /out
 # Set the working directory, rather than letting it be created automatically.
 COPY *.java .
+# change this line as necessary for each individual java project.
 RUN javac Hello.java
 
 # no need to keep the entire jdk, we just need the runtime environment.
