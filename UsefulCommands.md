@@ -53,5 +53,16 @@ What we want is for containers to be stateless, all data stored in an external d
 
 This will ensure any data written into the /data/db container inside the directory is *actually* written to the /your/dir/ directory on the host system.  Thus we can have multiple MongoDB containers running on our host system all referring to the same persistent storage and users will never know the difference, solar flares be damned.
 
+A few more commands before we start building our own images. To see every image stored locally on your machine: 
+> docker image ls
+ 
+To remove those images, not the container records:
+> docker rmi name:tag
+
+To reclaim space:
+> docker container prune -f
+> docker volume prune -f
+> docker image prune -f
+
 Now, what if we want to build our own images?
 

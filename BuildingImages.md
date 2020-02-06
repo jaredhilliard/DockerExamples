@@ -20,3 +20,5 @@ Our resulting image is named hello, and stored locally. We can now run it like a
 > docker run --rm hello
 
 The --rm option automatically removes the container from the process list after it is stopped.
+
+
