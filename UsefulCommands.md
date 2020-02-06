@@ -46,4 +46,12 @@ Now, what good does running jenkins inside a container do for us?  This isn't a 
 
 Oh well, it's a cool thing you can do, let's move on.
 
+Let's discuss storage.  When a container writes files, it writes them *inside* of the container.  If we stop the container, if the host machine restarts, if the container is moved to a different node, if a solar flare causes some key electrons to change their state and overwrite some bits, all of the data is lost.  If you run multiple copies of the same container, they all have their own data.
+
+What we want is for containers to be stateless, all data stored in an external database such as a SQL server. But if we want to store files in persistent storage, we use volumes.  In a production scenario, this might be something like Amazon S3 on AWS.  But we don't have that kind of cash, or that kind of need, so let's look at using local storage on our VMs.
+> docker run -v /your/dir/:/data/db -d mongo
+
+This will ensure any data written into the /data/db container inside the directory is *actually* written to the /your/dir/ directory on the host system.  Thus we can have multiple MongoDB containers running on our host system all referring to the same persistent storage and users will never know the difference, solar flares be damned.
+
+Now, what if we want to build our own images?
 
