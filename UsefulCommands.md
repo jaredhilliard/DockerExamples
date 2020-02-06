@@ -61,7 +61,9 @@ To remove those images, not the container records:
 
 To reclaim space:
 > docker container prune -f
+
 > docker volume prune -f
+
 > docker image prune -f
 
 Now, what if we want to build our own images?
