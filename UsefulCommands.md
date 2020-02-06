@@ -21,12 +21,27 @@ docker ps works as you would expect, it shows active docker processes.  We can s
 Try running hello-world a few more times.
 
 As you can imagine, a production system might have docker containers running and stopping constantly.  The list of stopped processes can get rather crowded.  Let's remove some of them.
-> docker rm <CONTAINER ID>
+> docker rm containerId
 
-We need not type out the entire container ID, it is in fact quite a bit longer than what we are shown.  If the container ID you are shown is effa1cc3c9f1, but there are no other container IDs beginning with e, you only have to type enough to uniquely identify the container you want to remove.
+We need not type out the entire container ID, it is in fact quite a bit longer than what we are shown.  If the container ID you are shown is effa1cc3c9f1, you only have to type enough to uniquely identify the container you want to remove.  If there are no other container IDs beginning with e, the following is sufficient:
 > docker rm e
 
 If we have a lot of stopped containers, and no reason to keep records of them around, we can simply use
 > docker container prune -f
 
 The f flag will force the removal of every stopped container without asking for permission.
+
+Alright, let's run a few more containers available on the *Docker Hub* that we've seen before.
+> docker run -d -p 8085:80 nginx
+
+The d flag causes the container to run in the background.  The p flag tells the linux vm to open port 8085, and route any traffic to port 80 in the nginx container.
+
+> docker run -p 8088:808 jenkins
+
+Navigate to your Amazon Linux server on port 8088 (this is your Public DNS on the VM Description page).  Are you able to proceed with installing Jenkins?  If not, what might you need to fix?
+
+Make sure to modify the security group so that port 8088 is open to the world (port 8080 will be open on the container by default).
+
+Now, what good does running jenkins inside a container do for us?  This isn't a teachable moment, I'm generally curious and a little bit flabbergasted.  What would we do with this? Oh well, it's a cool thing you can do, let's move on.
+
+
