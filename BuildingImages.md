@@ -21,4 +21,27 @@ Our resulting image is named hello, and stored locally. We can now run it like a
 
 The --rm option automatically removes the container from the process list after it is stopped.
 
+Now, what if we want to publish our images? 
+
+Publishing is a 3 step process.
+1. docker build
+2. docker login
+3. docker push
+
+Go ahead and run
+> docker login
+
+Anything we attempt to push needs to at least be tagged with the repository name and the image name, i.e.
+> docker push \<repository\_name\>/\<image\_name\>
+
+or
+
+> docker push \<repository\_name\>/\<image\_name\>:\<tag\_name\>
+
+If you don't specify a tag, Docker will just use 'latest'.  Traditional tags are things like version numbers or git commit hashes.
+
+If we want to rename a docker image in order to publish it, we can use:
+> docker tag \<current\_name\> \<repository\_name\>/\<current\_name\>
+
+Let's demonstrate how easy it easy to tie docker builds to git pushes.
 
