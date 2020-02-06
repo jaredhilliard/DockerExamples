@@ -36,12 +36,14 @@ Alright, let's run a few more containers available on the *Docker Hub* that we'v
 
 The d flag causes the container to run in the background.  The p flag tells the linux vm to open port 8085, and route any traffic to port 80 in the nginx container.
 
-> docker run -p 8088:808 jenkins
+> docker run -p 8088:8080 jenkins
 
 Navigate to your Amazon Linux server on port 8088 (this is your Public DNS on the VM Description page).  Are you able to proceed with installing Jenkins?  If not, what might you need to fix?
 
 Make sure to modify the security group so that port 8088 is open to the world (port 8080 will be open on the container by default).
 
-Now, what good does running jenkins inside a container do for us?  This isn't a teachable moment, I'm generally curious and a little bit flabbergasted.  What would we do with this? Oh well, it's a cool thing you can do, let's move on.
+Now, what good does running jenkins inside a container do for us?  This isn't a teachable moment, I'm generally curious and a little bit flabbergasted.  What would we do with this?
+
+Oh well, it's a cool thing you can do, let's move on.
 
 
